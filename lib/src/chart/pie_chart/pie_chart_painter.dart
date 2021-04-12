@@ -43,11 +43,13 @@ class PieChartPainter extends BaseChartPainter<PieChartData>
     _sectionsSpaceClearPaint = Paint()
       ..style = PaintingStyle.fill
       ..color = const Color(0x000000000)
-      ..blendMode = BlendMode.srcOut;
+      ..blendMode = BlendMode.srcOut
+      ..strokeCap = StrokeCap.round;
 
     _centerSpacePaint = Paint()
       ..style = PaintingStyle.fill
-      ..color = data.centerSpaceColor;
+      ..color = data.centerSpaceColor
+      ..strokeCap = StrokeCap.round;
   }
 
   /// Paints [PieChartData] into the provided canvas.
@@ -103,7 +105,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData>
         radius: _calculateCenterRadius(viewSize, data.centerSpaceRadius) + (section.radius / 2),
       );
 
-      _sectionPaint.color = Colors.red; //section.color;
+      _sectionPaint.color = section.color;
       _sectionPaint.strokeWidth = section.radius;
       _sectionPaint.strokeCap = StrokeCap.round;
 
