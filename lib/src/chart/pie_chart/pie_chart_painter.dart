@@ -103,7 +103,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData>
         radius: _calculateCenterRadius(viewSize, data.centerSpaceRadius) + (section.radius / 2),
       );
 
-      _sectionPaint.color = Colors.pink; //section.color;
+      _sectionPaint.color = section.color;
       _sectionPaint.strokeWidth = section.radius;
       _sectionPaint.strokeCap = StrokeCap.round;
 
